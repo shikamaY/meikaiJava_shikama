@@ -11,8 +11,11 @@ public class Ensyu2_2 {
 		num2 = 30;			// num2に30を代入
 		num3 = 80;			// num3に80を代入
 
+		// num1の値を表示
 		System.out.println("num1の値は" + num1 + "です。");
+		// num2の値を表示
 		System.out.println("num2の値は" + num2 + "です。");
+		// num3の値を表示
 		System.out.println("num3の値は" + num3 + "です。");
 		// 合計を表示
 		System.out.println("合計は" + (num1 + num2 + num3) + "です。");
