@@ -12,7 +12,7 @@ public class Ensyu3_1 {
 		// 入力値をint型numに代入する
 		int num = stdIn.nextInt();
 		// 入力値がマイナスか判別
-		if(num < 0){
+		if(num < 0) {
 			// numに-1を掛けて整数に変換
 			num = num * -1;
 		}
