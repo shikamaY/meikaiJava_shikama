@@ -11,7 +11,7 @@ public class Ensyu2_4 {
 		Scanner stdIn = new Scanner(System.in);
 		// 入力を促すコメント表示する
 		System.out.print("整数値:");
-		// 入力値をnumに代入する
+		// 入力値をint型numに代入する
 		num = stdIn.nextInt();
 		// 入力値に10加算した結果を表示する
 		System.out.println("10を加えた値は" + (num + 10) + "です。");
