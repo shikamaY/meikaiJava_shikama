@@ -23,7 +23,6 @@ public class Ensyu3_2 {
 			// 割り切れない場合は約数ではないと表示する
 			System.out.println("BはAの約数ではありません。");
 		}
-
 	}
 
 }
