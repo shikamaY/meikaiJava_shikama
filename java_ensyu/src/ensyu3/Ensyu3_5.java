@@ -12,11 +12,11 @@ public class Ensyu3_5 {
 		// 入力値をint型のnumに代入する
 		int num = stdIn.nextInt();
 		// 入力値が正の値か判定する
-		if(num < 0){
+		if(num < 0) {
 			// 正でないことを表示する
 			System.out.println("正ではない値が入力されました。");
 		// 5で割り切れるか判定
-		} else if (num % 5 == 0){
+		} else if (num % 5 == 0) {
 			// 割り切れると表示する
 			System.out.println("その値は5で割り切れます。");
 		// それ以外は割り切れないと判定する
