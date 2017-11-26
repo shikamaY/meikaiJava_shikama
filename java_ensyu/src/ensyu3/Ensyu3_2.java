@@ -16,7 +16,7 @@ public class Ensyu3_2 {
 		// 入力値をint型のnumBに代入する
 		int numB  = stdIn.nextInt();
 		// numAをnumBで割り切れるか判定する
-		if(numA % numB == 0){
+		if(numA % numB == 0) {
 			// 割り切れる場合は約数と表示する
 			System.out.println("BはAの約数です。");
 		} else {
