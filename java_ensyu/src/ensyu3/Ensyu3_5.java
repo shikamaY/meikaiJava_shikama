@@ -7,8 +7,8 @@ public class Ensyu3_5 {
 	public static void main(String[] args) {
 		// Scannerクラスのオブジェクトを生成
 		Scanner stdIn = new Scanner(System.in);
-		// 整数を入力を促すコメント表示する
-		System.out.print("整数:");
+		// 正数を入力を促すコメント表示する
+		System.out.print("正数:");
 		// 入力値をint型のnumに代入する
 		int num = stdIn.nextInt();
 		// 入力値が正の値か判定する
