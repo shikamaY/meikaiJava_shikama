@@ -13,11 +13,11 @@ public class Ensyu3_6 {
 		int num  = stdIn.nextInt();
 
 		// 入力値が正の値か判定する
-		if(num < 0){
+		if(num < 0) {
 			// 正でないことを表示する
 			System.out.println("正ではない値が入力されました。");
 		// numか10の倍数か判定する
-		} else if (num % 10 == 0){
+		} else if (num % 10 == 0) {
 			// 10で割り切れる場合は倍数と表示する
 			System.out.println("その値は10の倍数です。");
 		} else {
