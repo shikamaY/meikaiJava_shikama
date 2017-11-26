@@ -7,7 +7,7 @@ public class Ensyu2_4 {
 	public static void main(String[] args) {
 		// 入力値を代入するnumをint型で宣言
 		int num;
-		// 入力された値を入れる変数を宣言する
+		// Scannerクラスのオブジェクトを生成
 		Scanner stdIn = new Scanner(System.in);
 		// 入力を促すコメント表示する
 		System.out.print("整数値:");
