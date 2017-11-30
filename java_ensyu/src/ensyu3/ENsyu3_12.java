@@ -21,10 +21,10 @@ public class ENsyu3_12 {
 		// 最大値を入れる変数を用意しnumAを代入する
 		int min = numA;
 		// max（numA)とnumBを比較する
-		if(min > numB){
+		if(min > numB) {
 			// numBを代入
 			min = numB;
-		} else if(min > numC){
+		} else if(min > numC) {
 			// numCを代入
 			min = numC;
 		}
