@@ -14,7 +14,7 @@ public class Ensyu3_13 {
 		System.out.print("整数B:");
 		// 入力値をint型のnumBに代入する
 		int numB  = stdIn.nextInt();
-		//  整数Bを入力を促すコメント表示する
+		//  整数Cを入力を促すコメント表示する
 		System.out.print("整数C:");
 		// 入力値をint型のnumCに代入する
 		int numC  = stdIn.nextInt();
