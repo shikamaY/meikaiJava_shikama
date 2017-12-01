@@ -21,7 +21,7 @@ public class Ensyu4_5 {
 		while (x >= 0) {
 			//System.out.println(x--);	// xの値を表示してデクリメント
 			// xが0以下とならないため無限にループする
-			System.out.println(x++);
+			System.out.println(x++);	// xの値を表示してインクリメント
 		}
 	}
 
