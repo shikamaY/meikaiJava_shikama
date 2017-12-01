@@ -10,7 +10,7 @@ public class Ensyu2_7 {
 		// 1桁の正の数値を生成する
 		int posNum = rand.nextInt(10);
 		// 1桁の負の数値を生成する
-		int negNum = rand.nextInt(10);
+		int negNum = rand.nextInt(10) * -1;
 		// 2桁の正の数値を生成する
 		int posNumDouble = rand.nextInt(90) + 10;
 		// 1桁の正の数値を表示する
