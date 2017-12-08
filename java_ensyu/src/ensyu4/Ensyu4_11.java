@@ -15,13 +15,9 @@ public class Ensyu4_11 {
 		int x = 0;
 
 		// 正数が入れられるまでループ
-		for (int i = 0; i < 1; ){
+		for ( ; x <= 0; ){
 			System.out.println("正の整数値：");
 			x = stdIn.nextInt();
-			// 負数の場合はiを減らす
-			if (x >= 0) {
-				i++;
-			}
 		}
 
 		// 0になるまでループ
