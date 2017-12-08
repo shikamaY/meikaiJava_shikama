@@ -15,12 +15,12 @@ public class Ensyu4_12 {
 		int x = 0;
 
 		// 正数が入れられるまでループ
-		for (int i = 0; i < 1; i++){
+		for (int i = 0; i < 1; ){
 			System.out.println("正の整数値：");
 			x = stdIn.nextInt();
 			// 負数の場合はiを減らす
-			if (x < 0) {
-				i--;
+			if (x >= 0) {
+				i++;
 			}
 		}
 
