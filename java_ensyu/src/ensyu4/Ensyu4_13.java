@@ -2,6 +2,10 @@ package ensyu4;
 
 import java.util.Scanner;
 
+/*演習4-13
+ * 1からnまでの和を求めるList4-10(p.112)をfor文で実現せよ。
+ */
+
 public class Ensyu4_13 {
 
 	public static void main(String[] args) {
