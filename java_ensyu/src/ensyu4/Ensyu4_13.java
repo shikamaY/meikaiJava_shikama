@@ -15,7 +15,7 @@ public class Ensyu4_13 {
 		int n = 0;
 
 		// nの値が1以上が入力されるまでループ
-		for ( ; n > 0 ; ) {
+		for ( ; n <= 0 ; ) {
 			System.out.println("nの値：");
 			n = stdIn.nextInt();
 		}
@@ -23,7 +23,7 @@ public class Ensyu4_13 {
 		int sum = 0;
 
 		// n回ループする
-		for (int i = 0; i <=0; i++ ) {
+		for (int i = 0; i <= n; i++ ) {
 			// sumにiを加算
 			sum += i;
 		}
