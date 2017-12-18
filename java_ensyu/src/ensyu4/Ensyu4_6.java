@@ -20,7 +20,7 @@ public class Ensyu4_6 {
 			i++;
 		}
 		// 入力値がマイナスの場合は改行しない
-		if ( n < 1) {
+		if ( n < 0) {
 			System.out.println();
 		}
 	}
