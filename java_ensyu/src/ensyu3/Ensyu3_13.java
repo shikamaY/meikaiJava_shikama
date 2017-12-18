@@ -22,10 +22,13 @@ public class Ensyu3_13 {
 		int center = numA;
 		// center（numA)がnumBより大きいかを比較する
 		if(center > numB ){
-			// center（numA)がnumCより大きいかを比較する
-			if( center > numC) {
+			// center（numA)がnumCより大きいかつnumCがnumBより大きいかを比較する
+			if( center > numC && numC > numB) {
 				// numCを代入する
 				center = numC;
+			// numBがnumCより大きい場合
+			} else  {
+				center = numB;
 			}
 		// 	center（numA)がnumBより小さいとき
 		} else {
