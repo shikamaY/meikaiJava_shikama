@@ -23,8 +23,8 @@ public class Ensyu4_1 {
 			System.out.println("もう一度？ 1・・・Yes/0・・・NO：");
 			// retryに値を代入
 			retry = stdIn.nextInt();
-		// retryが1の場合は終了する
-		} while(retry == 1);
+		// retryが0の場合は終了する
+		} while(retry == 0);
 	}
 
 }
