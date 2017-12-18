@@ -18,9 +18,9 @@ public class Ensyu3_11 {
 		int diff = numA > numB ? (numA - numB) : (numB - numA);
 		// 差分が10以下か判定する
 		if(diff < 11) {
-			System.out.println("されらの差は10以下です。");
+			System.out.println("それらの差は10以下です。");
 		} else {
-			System.out.println("されらの差は11以上です。");
+			System.out.println("それらの差は11以上です。");
 		}
 	}
 
