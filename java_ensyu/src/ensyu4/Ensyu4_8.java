@@ -17,23 +17,11 @@ public class Ensyu4_8 {
 		int inputNum = stdIn.nextInt();
 
 		// 桁数を数える変数を用意
-		int count = 1;
-		// 終了するまでループする
-		while (true) {
-			// inputnumが10未満の場合
-			if ( inputNum < 10){
-				// countを0にする
-				count = 1;
-				// ループを終了する
-				break;
-			}
-			// inputNumを10で割った結果が10未満か判定
-			if ((inputNum /= 10) < 10) {
-				// countをインクリメント
-				count++;
-				// ループを終了する
-				break;
-			}
+		int count = 0;
+		// inputNumが10で割り切れて10以下の場合終了
+		while (inputNum % 10 != 0 || inputNum >= 10) {
+			// inputNumを10で割った割る
+			inputNum /= 10;
 			// countをインクリメント
 			count++;
 		}
