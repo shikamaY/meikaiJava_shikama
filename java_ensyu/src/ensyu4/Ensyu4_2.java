@@ -25,15 +25,18 @@ public class Ensyu4_2 {
 			System.out.print("数値を入れてください:");
 			// anserに入力値を入れる
 			anser = stdIn.nextInt();
-			// 入力値が正解か判定する
-			if (num == anser) {
-				// 正解であることを表示する
-				System.out.println("正解です。");
-				// 正解の場合はbreakする
-				break;
+
+			// 不正解か判定する
+			if ( num != anser) {
+				// 不正解と表示する
+				System.out.println("不正解です");
 			}
-			System.out.println("不正解です");
-		} while (true);
+
+		// 入力値が正解かの場合は終了
+		} while (num != anser);
+		// 正解であることを表示する
+		System.out.println("正解です。");
+
 	}
 
 }
