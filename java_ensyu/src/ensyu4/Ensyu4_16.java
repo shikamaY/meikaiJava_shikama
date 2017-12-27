@@ -10,19 +10,25 @@ import java.util.Scanner;
 public class Ensyu4_16 {
 
 	public static void main(String[] args) {
-		Scanner stdIn = new Scanner(System.in);
+		// ユーザ入力のため、Scannerクラスのオブジェクトを生成
+		Scanner standardInput = new Scanner(System.in);
 
+		// 入力を促すように表示する
 		System.out.println("何個＊を表示しますか：");
-		int n = stdIn.nextInt();
+		// 入力値を変数に入れる
+		int inputNum = standardInput.nextInt();
 
-		for (int i = 1; i <= n; i++){
+		// 入力値分ループする
+		for (int count = 1; count <= inputNum; count++){
+			// *を表示する
 			System.out.print('*');
 			// iが5で割れるか判定
-			if(i % 5 == 0) {
+			if(count % 5 == 0) {
 				// 改行する
 				System.out.println();
 			}
 		}
+		// 改行する
 		System.out.println();
 	}
 
