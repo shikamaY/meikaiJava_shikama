@@ -10,23 +10,29 @@ import java.util.Scanner;
 public class Ensyu4_17 {
 
 	public static void main(String[] args) {
-		Scanner stdIn = new Scanner(System.in);
+		// ユーザ入力のため、Scannerクラスのオブジェクトを生成
+		Scanner standardInput = new Scanner(System.in);
 
+		// 入力を促すように表示する
 		System.out.println("整数値：");
-		int inputNum = stdIn.nextInt();
+		// 変数に代入する
+		int inputNum = standardInput.nextInt();
 
 		// カウント用の変数
-		int count = 0;
-		for (int i = 1; i <= inputNum; i++) {
-			if ( inputNum % i == 0) {
-				System.out.println(i);
+		int divisorCount = 0;
+		// 入力値回ループする
+		for (int count = 1; count <= inputNum; count++) {
+			// 入力値が割り切れるか判定する
+			if ( inputNum % count == 0) {
+				// 現在の値を表示する
+				System.out.println(count);
 				// 約数の場合はcountをインクリメントする
-				count++;
+				divisorCount++;
 			}
 		}
 
 		// 約数の数を表示する
-		System.out.println("約数は" + count + "個です");
+		System.out.println("約数は" + divisorCount + "個です");
 	}
 
 }
