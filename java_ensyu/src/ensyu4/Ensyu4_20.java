@@ -17,9 +17,9 @@ public class Ensyu4_20 {
 		int inputNum = standardInput.nextInt();
 
 		// 入力値の回数だけ改行を行うため、inputNum回ループする
-		for (int countCol = 0; countCol < inputNum; countCol++) {
+		for (int countRow = 0; countRow < inputNum; countRow++) {
 			// 入力値の回数だけ*を表示するため、inputNum回ループする
-			for (int countRow = 0; countRow < inputNum; countRow++) {
+			for (int countCol = 0; countCol < inputNum; countCol++) {
 				// *を表示する
 				System.out.print('*');
 			}
