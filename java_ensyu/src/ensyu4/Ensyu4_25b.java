@@ -26,7 +26,7 @@ public class Ensyu4_25b {
 		// 入力値分ループする
 		for (int count = 0; count < inputNumber; count++) {
 			// 入力を促すメッセージを表示する
-			System.out.println("整数（0で終了）:");
+			System.out.println("整数:");
 			// 入力値を変数に入れる
 			int inputNum = standardInput.nextInt();
 			// 入力値が０か判定する
