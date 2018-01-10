@@ -15,14 +15,21 @@ public class Ensyu4_27 {
 		// 0～99のランダムな値を生成する
 		int anserNumber = randomInt.nextInt(100);
 
-		// 処理内容を表示する
+		// ゲーム開始を宣言する
 		System.out.println("数当てゲーム開始！！");
-		// 処理内容を表示する
+		// どういったゲーム内容か表示する
 		System.out.println("0～99の数を当ててください。");
-		// 何回間違えると答えを表示するか入力するように表示する
-		System.out.println("回答回数を入力してください:");
-		// 入力値を変数に代入する
-		int inputNumberCount = standardInput.nextInt();
+
+		// 入力値を入れる変数を用意する
+		int inputNumberCount;
+		// 入力値が正の値でない場合は再入力させる
+		do {
+			// 何回間違えると答えを表示するか入力するように表示する
+			System.out.println("回答回数を正の数で入力してください:");
+			// 入力値を変数に代入する
+			inputNumberCount = standardInput.nextInt();
+		// 入力値が1未満の場合はループ
+		} while (inputNumberCount < 1);
 
 		// 入力値を入れる変数を用意する
 		int inputNumber;
@@ -46,7 +53,7 @@ public class Ensyu4_27 {
 
 			// 一定数間違えた場合は正解を表示する
 			if (count == inputNumberCount) {
-				// 結果を表示する
+				// 正解の数値をを表示する
 				System.out.println("正解は" + anserNumber + "です。");
 				// ループを抜ける
 				break;
@@ -58,8 +65,8 @@ public class Ensyu4_27 {
 
 		// 回数以内に正解している場合は表示する
 		if (count != inputNumberCount) {
-			// 結果を表示する
-				System.out.println("正解です");
+			// 正解であることをを表示する
+			System.out.println("正解です");
 		}
 	}
 
