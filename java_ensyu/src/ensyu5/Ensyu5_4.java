@@ -29,7 +29,7 @@ public class Ensyu5_4 {
 		int inputNumber3 = standardInput.nextInt();
 
 		// 実数値で合計を計算する
-		double total = inputNumber1 + inputNumber2 + inputNumber3;
+		int total = inputNumber1 + inputNumber2 + inputNumber3;
 		// 実数値で平均を計算する
 		double average = total / 3;
 
