@@ -23,7 +23,7 @@ public class Ensyu4_24 {
 			// 正しい入力をするように表示する
 			System.out.println("正の整数を入力してください");
 			// 処理を終了する
-			System.exit(0);
+			return;
 		}
 
 		// 素数か確認するため2から入力値までループする
