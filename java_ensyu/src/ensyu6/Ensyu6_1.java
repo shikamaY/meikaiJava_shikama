@@ -6,9 +6,9 @@ package ensyu6;
 public class Ensyu6_1 {
 
 	public static void main(String[] args) {
-		// double型の配列を生成し、初期値を設定する
+		// 要数5個の配列の中身を表示するためにdouble型の配列を生成する
 		double[] doubleArray = {1,2,3,4,5};
-		// 要素数分ループする
+		// 配列の中身を表示するため、要素数5個分ループする
 		for (double number : doubleArray) {
 			// 要素を表示する
 			System.out.println(number);
