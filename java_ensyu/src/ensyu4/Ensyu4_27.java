@@ -13,7 +13,7 @@ public class Ensyu4_27 {
 		Scanner standardInput = new Scanner(System.in);
 
 		// 0～99のランダムな値を生成する
-		int anserNumber = randomInt.nextInt(100);
+		int answerNumber = randomInt.nextInt(100);
 
 		// ゲーム開始を宣言する
 		System.out.println("数当てゲーム開始！！");
@@ -42,11 +42,11 @@ public class Ensyu4_27 {
 			inputNumber = standardInput.nextInt();
 
 			// 入力値が答えより小さいか判定する
-			if (inputNumber > anserNumber) {
+			if (inputNumber > answerNumber) {
 				// 結果を表示する
 				System.out.println("もっと小さな数だよ。");
 			// 入力値が答えより大きいか判定する
-			} else if (inputNumber < anserNumber) {
+			} else if (inputNumber < answerNumber) {
 				// 結果を表示する
 				System.out.println("もっと大きな数だよ。");
 			}
@@ -54,14 +54,14 @@ public class Ensyu4_27 {
 			// 一定数間違えた場合は正解を表示する
 			if (count == inputNumberCount) {
 				// 正解の数値をを表示する
-				System.out.println("正解は" + anserNumber + "です。");
+				System.out.println("正解は" + answerNumber + "です。");
 				// ループを抜ける
 				break;
 			}
 			// カウントをインクリメントする
 			count++;
 		// 正解の場合はループを抜ける
-		} while (inputNumber != anserNumber);
+		} while (inputNumber != answerNumber);
 
 		// 回数以内に正解している場合は表示する
 		if (count != inputNumberCount) {
