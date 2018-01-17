@@ -8,12 +8,14 @@ package ensyu6;
 public class Ensyu6_3 {
 
 	public static void main(String[] args) {
+		// 要素数の定数を用意する
+		int elementCount= 5;
 		// 要素数5個の配列に値を入れるためにdouble型の配列を生成する
-		double[] array = new double[5];
+		double[] array = new double[elementCount];
 		// 配列に値を入れるために5回ループする
-		for (int count = 1; count <= 5; count++) {
+		for (int count = 0; count < elementCount; count++) {
 			// 各要素に値を代入する
-			array[count - 1] = 11 * count / 10d;
+			array[count] = 11 * (count + 1) / 10d;
 		}
 		// 結果を表示するために要素数分ループする
 		for (double number: array) {
