@@ -7,12 +7,14 @@ package ensyu6;
 public class Ensyu6_2 {
 
 	public static void main(String[] args) {
+		// 要素数の定数を用意する
+		int elementCount= 5;
 		// 要素数5個の配列に値を入れるためにint型の配列を生成する
-		int[] array = new int[5];
+		int[] array = new int[elementCount];
 		// 配列に値を入れるために5回ループする
-		for (int count = 5; count > 0; count--) {
+		for (int count = 0; count < elementCount; count++) {
 			// 各要素に値を代入する
-			array[5 - count] = count;
+			array[count] = elementCount - count ;
 		}
 		// 結果を表示するために要素数分ループする
 		for (int number: array) {
