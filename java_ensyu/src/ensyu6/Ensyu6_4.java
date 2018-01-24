@@ -11,6 +11,10 @@ import java.util.Scanner;
 
 public class Ensyu6_4 {
 
+	// 入力を促すメッセージ用の定数
+	public static String INPUT_MESSAGE = "要素数:";
+
+
 	public static void main(String[] args) {
 		// 乱数を取得するため、Randomクラスのオブジェクトを生成する
 		Random rand = new Random();
@@ -22,7 +26,7 @@ public class Ensyu6_4 {
 		// 乱数の最小値
 		int randMin = 1;
 		// 何を入力するか表示する
-		System.out.print("要素数:");
+		System.out.print(INPUT_MESSAGE);
 		// 入力値を代入
 		int inputNumber = standardInput.nextInt();
 		// 入力値分のランダムな値を生成するための配列を用意する
