@@ -17,6 +17,10 @@ public class Ensyu6_4 {
 		// ユーザ入力のため、Scannerクラスのオブジェクトを生成する
 		Scanner standardInput = new Scanner(System.in);
 
+		// 乱数の最大値
+		int randMax = 10;
+		// 乱数の最小値
+		int randMin = 1;
 		// 何を入力するか表示する
 		System.out.print("要素数:");
 		// 入力値を代入
@@ -28,7 +32,7 @@ public class Ensyu6_4 {
 		// 入力値分のループする
 		for (int count = 0; count <inputNumber; count++) {
 			// 各要素に乱数を入れる
-			array[count] = 1 + rand.nextInt(10);
+			array[count] = randMin + rand.nextInt(randMax);
 			// 生成された乱数が最大値か判定する
 			if (max < array[count]) {
 				// 最大値に代入する
@@ -64,6 +68,8 @@ public class Ensyu6_4 {
 		// 改行する
 		System.out.println();
 		}
+		// Scannerクラスをクローズ
+		standardInput.close();
 	}
 
 }
