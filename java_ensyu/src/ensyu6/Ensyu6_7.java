@@ -19,12 +19,12 @@ public class Ensyu6_7 {
 		// ユーザ入力のため、Scannerクラスのオブジェクトを生成する
 		Scanner standardInput = new Scanner(System.in);
 
-		// 要素数
+		// 要素数（検証で使用する仮おきの数値のため、変更可）
 		final int elementCount = 12;
-		// 数値を入れるための、配列を用意する
+		// ランダムな数値を入れるための、配列を用意する
 		int[] array = new int[elementCount];
 
-		// 要素数分ループする
+		// ランダムな数値を各要素に入れるため、要素数分ループする
 		for (int count = 0; count < elementCount; count++) {
 			// ランダムな値を代入する
 			array[count] = rand.nextInt(10);
@@ -32,7 +32,7 @@ public class Ensyu6_7 {
 
 		// 何を出力するか表示する
 		System.out.print("配列arrayの全要素の値\n{");
-		// 配列の要素数分ループする
+		// 現在の配列ないの要素をすべて表示するため、要素数分ループする
 		for (int number : array) {
 			// 要素を表示する
 			System.out.print(number + " ");
@@ -40,16 +40,16 @@ public class Ensyu6_7 {
 		// 表示を見やすくするため、}を表示する
 		System.out.println("}");
 
-		// 何を入力するか表示する
+		// 検索する文字列を入力するるよう表示する
 		System.out.print(INPUT_MESSAGE);
-		// 入力値を代入
+		// 検索する値を代入
 		int keyNumber = standardInput.nextInt();
 
 		// 検索用のカウント変数
 		int searchCount;
 		// 末尾の要素数を入れる変数。-1は一致なし
 		int lastMach = -1;
-		// 要素数分ループする
+		// 検索する値が存在するか判定するため、要素数分ループする
 		for (searchCount = 0; searchCount < elementCount; searchCount++){
 			// keyNumberと一致するか判定する
 			if (array[searchCount] == keyNumber ) {
