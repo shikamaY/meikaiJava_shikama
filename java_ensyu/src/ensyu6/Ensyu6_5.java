@@ -18,32 +18,32 @@ public class Ensyu6_5 {
 
 		// ユーザ入力のため、Scannerクラスのオブジェクトを生成する
 		Scanner standardInput = new Scanner(System.in);
-		// 何を入力するか表示する
+		// 要数を決めるための入力をするように表示する
 		System.out.print(INPUT_MESSAGE);
-		// 入力値を代入
+		// 要数の入力値を代入
 		int inputNumber = standardInput.nextInt();
-		// 入力値分の配列を用意する
+		// 入力値の要数分の配列を用意する
 		int array[] = new int[inputNumber];
 
-		// 入力値分のループする
+		// 要数の入力値分のループする
 		for (int count = 0; count < inputNumber; count++) {
-			// 各要素に何を入れるか促すメッセージを表示する
-			System.out.print("a[" + count + "] = ");
-			// 入力値を代入
+			// 配列に値を入れるために各要素に入力を促すメッセージを表示する
+			System.out.print("array[" + count + "] = ");
+			// 各要素の入力値を代入
 			array[count] = standardInput.nextInt();
 		}
-
-		String result = "";
+		// 文字列を結合した結果を入れる変数
+		String arrayBondResult = "";
 		// カンマ区切りにするため入力値 - 1回分ループする
 		for (int count = 0; count < inputNumber - 1; count++) {
 			// カンマを文字列の最後に足してresultに足す
-			result += array[count] + ", ";
+			arrayBondResult += array[count] + ", ";
 		}
 		// カンマなしで配列の最終地をresultに足す
-		result += array[inputNumber - 1];
+		arrayBondResult += array[inputNumber - 1];
 
-		// 結果を表示する
-		System.out.println("a = {" + result + "}");
+		// 文字列を結合した結果を表示する
+		System.out.println("array = {" + arrayBondResult + "}");
 
 		// Scannerクラスをクローズ
 		standardInput.close();
