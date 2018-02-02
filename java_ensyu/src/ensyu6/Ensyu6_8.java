@@ -10,17 +10,24 @@ import java.util.Scanner;
 public class Ensyu6_8 {
 
 	// 要素数の入力を促すメッセージ用の定数
-	public static String INPUT_MESSAGE = "要素数:";
+	public static String INPUT_MESSAGE = "要素数（正数）:";
 	// 要素の入力を促すメッセージ用の定数
 	public static String INPUT_MESSAGE_NUMBER = "要素（double型）:";
 
 	public static void main(String[] args) {
 		// ユーザ入力のため、Scannerクラスのオブジェクトを生成する
 		Scanner standardInput = new Scanner(System.in);
-		// 要素数を入力してもらうため、何を入力するか表示する
-		System.out.print(INPUT_MESSAGE);
-		// 要素数を代入
-		int inputArrayCount = standardInput.nextInt();
+
+		// 要素数を入れる変数
+		int inputArrayCount;
+		// 入力値が正しくない場合、再度入力してもらうためにループする
+		do {
+			// 要素数を入力してもらうため、何を入力するか表示する
+			System.out.print(INPUT_MESSAGE);
+			// 要素数を代入
+			inputArrayCount = standardInput.nextInt();
+		// 入力値が0以下の場合は再度入力してもらう
+		} while (inputArrayCount <= 0);
 		// double型の数値をを入れるため、要素数分の配列を用意する
 		double numberArray[] = new double[inputArrayCount];
 
@@ -29,7 +36,7 @@ public class Ensyu6_8 {
 			// double型の配列に入れるため、各要素に何を入れるか促すメッセージを表示する
 			System.out.print(count + 1 + INPUT_MESSAGE_NUMBER);
 			// 入力値を代入
-			numberArray[count] = standardInput.nextInt();
+			numberArray[count] = standardInput.nextDouble();
 		}
 
 		// 数値の合計値を入れる変数を用意
