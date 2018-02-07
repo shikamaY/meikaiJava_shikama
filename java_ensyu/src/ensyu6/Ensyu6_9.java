@@ -24,21 +24,21 @@ public class Ensyu6_9 {
 		int inputArrayCount = standardInput.nextInt();
 
 		// ランダムな数値を入れるための、配列を用意する
-		int[] array = new int[inputArrayCount];
+		int[] arrayNumber = new int[inputArrayCount];
 
 		// 乱数の最大値を決める定数
-		int randMax = 10;
+		final int randMax = 10;
 		// 乱数の最小値を決める定数
-		int randMin = 1;
+		final int randMin = 1;
 
 		// ランダムな数値を各要素に入れるため、要素数分ループする
 		for (int count = 0; count < inputArrayCount; count++) {
 			// ランダムな値を代入する
-			array[count] = rand.nextInt(randMax) + randMin;
+			arrayNumber[count] = rand.nextInt(randMax) + randMin;
 		}
 
 		// 全要素を表示するため、要素数分ループする
-		for (int randNumber : array) {
+		for (int randNumber : arrayNumber) {
 			// 各要素を表示する
 			System.out.print(randNumber + " ");
 		}
