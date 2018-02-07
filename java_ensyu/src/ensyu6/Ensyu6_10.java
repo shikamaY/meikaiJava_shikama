@@ -24,13 +24,16 @@ public class Ensyu6_10 {
 		// 要素数を代入
 		int inputArrayCount = standardInput.nextInt();
 
+		// 要素数を代入
+		inputArrayCount = standardInput.nextInt();
+
 		// ランダムな数値を入れるための、配列を用意する
-		int[] array = new int[inputArrayCount];
+		int[] arrayNuber = new int[inputArrayCount];
 
 		// 乱数の最大値を決める定数
-		int randMax = 10;
+		final int randMax = 10;
 		// 乱数の最小値を決める定数
-		int randMin = 1;
+		final int randMin = 1;
 
 		// 連続して同じ値が出ていないか判定するための一時的な乱数を入れる変数
 		int randTempNumber;
@@ -39,16 +42,16 @@ public class Ensyu6_10 {
 			// ランダムな値を代入する
 			randTempNumber = rand.nextInt(randMax) + randMin;
 			// 初回ループ以外で前の要素と同じ値の場合は異なる値になるまで乱数を再生成する
-			while ( count != 0 && array[count -1] == randTempNumber) {
+			while ( count != 0 && arrayNuber[count -1] == randTempNumber) {
 				// ランダムな値を代入する
 				randTempNumber = rand.nextInt(randMax) + randMin;
 			}
 			// 前の要素と同じでない場合は配列に値を代入する
-			array[count] = randTempNumber;
+			arrayNuber[count] = randTempNumber;
 		}
 
 		// 全要素を表示するため、要素数分ループする
-		for (int randNumber : array) {
+		for (int randNumber : arrayNuber) {
 			// 各要素を表示する
 			System.out.print(randNumber + " ");
 		}
