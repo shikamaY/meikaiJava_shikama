@@ -28,12 +28,6 @@ public class Ensyu6_11 {
 		// 入力値が0以下の場合は再度入力してもらう
 		} while (inputArrayCount <= 0);
 
-		// 要素数を代入
-		inputArrayCount = standardInput.nextInt();
-
-		// ランダムな数値を入れるための、配列を用意する
-		int[] arrayNuber = new int[inputArrayCount];
-
 		// 乱数の最大値を決める定数
 		final int randMax = 10;
 		// 乱数の最小値を決める定数
