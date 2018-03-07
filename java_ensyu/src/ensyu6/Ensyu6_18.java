@@ -21,11 +21,11 @@ public class Ensyu6_18 {
 		inputArray = new int[rawLines][];
 		// 列数と各要素を入力するため、行数分ループする
 		for (int rawCount = 0; rawCount < inputArray.length ; rawCount++) {
-				// 列数を決めるため、入力値を代入する
-				System.out.print("列数：");
-				// 列数を決めるため、入力値を代入する
-				int columnLines = standardInput.nextInt();
-				// 各行の列を作成する
+			// 列数を決めるため、入力値を代入する
+			System.out.print("列数：");
+			// 列数を決めるため、入力値を代入する
+			int columnLines = standardInput.nextInt();
+			// 各行の列を作成する
 				inputArray[rawCount] = new int[columnLines];
 			// 各要素を入力するため、列数分ループする
 			for (int columnCount = 0; columnCount < inputArray[rawCount].length; columnCount++ ) {
