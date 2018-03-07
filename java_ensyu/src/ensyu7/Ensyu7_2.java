@@ -24,30 +24,30 @@ public class Ensyu7_2 {
 			// ユーザに3つめの値を入力してもらうために表示する
 			System.out.print("整数C：");
 			// 入力値を変数に代入する
-			int intNumberC= standardInput.nextInt();
+			int intNumberC = standardInput.nextInt();
 
-		// 入力値の判定を行うため、入力値を引数にsignOfメソッドを実行し、結果を表示する
+		// 入力値の判定を行うため、入力値を引数にminメソッドを実行し、結果を表示する
 		System.out.println(min(intNumberA,intNumberB,intNumberC));
 
 	}
 
 	/* 3つの要素から最小値を求めるメソッド
-	 * numberA:1つ目の比較要素
-	 * numberB:2つ目の比較要素
-	 * numberC:3つ目の比較要素
+	 * diffNumberA:1つ目の比較要素
+	 * diffNumberB:2つ目の比較要素
+	 * diffNumberC:3つ目の比較要素
 	 */
-	static int min(int numberA,int numberB, int numberC){
-		// 各要素を比較するため、numberA仮の最小値とする
-		int min = numberA;
-		// 最小値とnumberBを比較する
-		if(min > numberB) {
-			// 最小値よりnumberBが小さい場合、最小値にnumberBを代入する
-			min = numberB;
+	static int min(int diffNumberA, int diffNumberB, int diffNumberC){
+		// 各要素を比較するため、diffNumberA仮の最小値とする
+		int min = diffNumberA;
+		// 最小値とdiffNumberBを比較する
+		if(min > diffNumberB) {
+			// 最小値よりdiffNumberBが小さい場合、最小値にdiffNumberBを代入する
+			min = diffNumberB;
 		}
 		// 最小値とnumberCを比較する
-		if (min > numberC ) {
-			// 最小値よりnumberCが小さい場合、最小値にnumberCを代入する
-			min = numberC;
+		if (min > diffNumberC ) {
+			// 最小値よりdiffNumberCが小さい場合、最小値にdiffNumberCを代入する
+			min = diffNumberC;
 		}
 		// 最小値を呼び出し元に返す
 		return min;
