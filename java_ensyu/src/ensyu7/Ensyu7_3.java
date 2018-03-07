@@ -23,7 +23,7 @@ public class Ensyu7_3 {
 			// ユーザに3つめの値を入力してもらうために表示する
 			System.out.print("整数C：");
 			// 入力値を変数に代入する
-			int intNumberC= standardInput.nextInt();
+			int intNumberC = standardInput.nextInt();
 
 		// 入力値の判定を行うため、入力値を引数にmedメソッドを実行し、結果を表示する
 		System.out.println(med(intNumberA,intNumberB,intNumberC));
@@ -35,29 +35,29 @@ public class Ensyu7_3 {
 	 * numberB:2つ目の比較要素
 	 * numberC:3つ目の比較要素
 	 */
-	static int med(int numberA,int numberB, int numberC) {
+	static int med(int diffNumberA, int diffNumberB, int diffNumberC) {
 		// 中央値を求めるため、仮の中央値を入れる
-		int med = numberA;
-		// med（numberA)がnumberBより大きいかを比較する
-		if(med > numberB ){
-			// med（numberA)がnumberCより大きいかつnumberCがnumberBより大きいかを比較する
-			if( med > numberC && numberC > numberB) {
-				// numberCを代入する
-				med = numberC;
-			// numberBがnumberCより大きい場合
+		int med = diffNumberA;
+		// med（diffNumberA)がdiffNumberBより大きいかを比較する
+		if(med > diffNumberB ){
+			// med（diffNumberA)がdiffNumberCより大きいかつdiffNumberCがdiffNumberBより大きいかを比較する
+			if( med > diffNumberC && diffNumberC > diffNumberB) {
+				// diffNumberCを代入する
+				med = diffNumberC;
+			// diffNumberBがdiffNumberCより大きい場合
 			} else  {
-				med = numberB;
+				med = diffNumberB;
 			}
-		// 	med（numberA)がnumberBより小さいとき
+		// 	med（diffNumberA)がdiffNumberBより小さいとき
 		} else {
-			// numberBとnumberCを比較する
-			if( numberB < numberC) {
+			// diffNumberBとdiffNumberCを比較する
+			if( diffNumberB < diffNumberC) {
 			// numberBを代入する
-			med = numberB;
+			med = diffNumberB;
 			// med（numberA)がnumberCより大きいかを比較する
-			} else if (med < numberC ){
+			} else if (med < diffNumberC ){
 				// numberCを代入する
-				med = numberC;
+				med = diffNumberC;
 			}
 		}
 		// 中央値を呼び出し元に返す
