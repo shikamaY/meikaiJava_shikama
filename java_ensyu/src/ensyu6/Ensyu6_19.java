@@ -78,7 +78,7 @@ public class Ensyu6_19 {
 		// 指定した人数分値を入力するため、人数回ループする
 		for (int count = 0; count < elementCount; count++) {
 			// どの要素に値を入れるかユーザに分かるように表示する
-			System.out.print((classCount + 1) + "組" + (count + 1) + "番のの点数:");
+			System.out.print((classCount + 1) + "組" + (count + 1) + "番の点数:");
 			// 入力された値を各要素に代入する
 			testScore[count] = standardInput.nextInt();
 		}
@@ -100,12 +100,16 @@ public class Ensyu6_19 {
 	 * intArray:計算するint型の配列
 	 */
 	static int intArraySum(int[] intArray) {
+		// 数値の合計を入れる変数を用意する
 		int sum = 0;
 
+		// 全要素を加算するため配列の要素数分ループする
 		for (int number : intArray) {
+			// 各要素を加算する
 			sum += number;
 		}
 
+		// 全要素の合計を呼び出し元に返す
 		return sum;
 	}
 }
