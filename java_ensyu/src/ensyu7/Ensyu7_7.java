@@ -13,7 +13,9 @@ public class Ensyu7_7 {
 		// ユーザ入力のため、Scannerクラスのオブジェクトを生成する
 		Scanner standardInput = new Scanner(System.in);
 
+		// 処理内容をユーザに分かるようにするために表示する
 		System.out.println("左下直角の三角形を表示します");
+		// 段数を指定してもらうために表示する
 		System.out.print("段数は：");
 		// 入力値を変数に代入する
 		int rowCount = standardInput.nextInt();
