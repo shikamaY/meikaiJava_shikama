@@ -128,7 +128,7 @@ public class Ensyu7_13 {
 				// 指定された値を変数に入れる
 				bitString += setNumber;
 			} else {
-				// countのビット数が1か判定して1か0を表示する
+				// countのビット数が1か判定して1か0をbitStringに追加する
 				bitString += ((intNumber >>> count & 1) == 1) ? '1' : '0';
 			}
 		}
