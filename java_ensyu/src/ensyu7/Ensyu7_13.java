@@ -31,44 +31,28 @@ public class Ensyu7_13 {
 		System.out.println("inverse変換後：" +inverse(intNumber,numberCount));
 	}
 
-	/* 指定したビットが0の場合１にするメソッド
+	/* 指定したビットを１にするメソッド
 	 * intNumber:変換する整数値
 	 * numberCount:何番目のビットか決める値
 	 */
 	static int set(int intNumber, int numberCount){
-		// 指定した値の位置のビット値を取得する
-		String getBitResult = getBit(intNumber,numberCount);
 		// 変換後のビット値を入れる変数
 		String bitString = "";
-		// 指定した位置のビット値が0か判定する
-		if (getBitResult.equals("0")) {
-			// 指定した位置のビットを1にしたビット値をだす
-			bitString = setBit(intNumber,numberCount,1);
-		} else {
-			// 指定した位置のビットを1にしたビット値をだす
-			bitString = setBit(intNumber,numberCount,1);
-		}
+		// 指定した位置のビットを1にしたビット値をだす
+		bitString = setBit(intNumber,numberCount,1);
 		// ビット値を整数に変換して、返却する
 		return bitConversion(bitString);
 	}
 
-	/* 指定したビットが1の場合0にするメソッド
+	/* 指定したビット0にするメソッド
 	 * intNumber:変換する整数値
 	 * numberCount:何番目のビットか決める値
 	 */
 	static int reset(int intNumber, int numberCount){
-		// 指定した値の位置のビット値を取得する
-		String getBitResult = getBit(intNumber,numberCount);
 		// 変換後のビット値を入れる変数
 		String bitString = "";
-		// 指定した位置のビット値が0か判定する
-		if (getBitResult.equals("1")) {
-			// 指定した位置のビットを0にしたビット値をだす
-			bitString = setBit(intNumber,numberCount,0);
-		} else {
-			// 指定した位置のビットを0にしたビット値をだす
-			bitString = setBit(intNumber,numberCount,0);
-		}
+		// 指定した位置のビットを0にしたビット値をだす
+		bitString = setBit(intNumber,numberCount,0);
 		// ビット値を整数に変換して、返却する
 		return bitConversion(bitString);
 	}
@@ -87,7 +71,7 @@ public class Ensyu7_13 {
 			// 指定した位置のビットを1にしたビット値をだす
 			bitString = setBit(intNumber,numberCount,1);
 		// 指定した位置のビット値が1か判定する
-		} else if(getBitResult.equals("1")) {
+		} else {
 			// 指定した位置のビットを0にしたビット値をだす
 			bitString = setBit(intNumber,numberCount,0);
 		}
@@ -95,7 +79,7 @@ public class Ensyu7_13 {
 		return bitConversion(bitString);
 	}
 
-	/* 指定した値をビットで表示するメソッド
+	/* 指定した値をビット変換するメソッド
 	 * intNumber:ビット表示する整数値
 	 * numberCount:指定した位置のビット値を取得するための変数
 	 */
