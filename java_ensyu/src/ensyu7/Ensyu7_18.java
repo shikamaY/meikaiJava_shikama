@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class Ensyu7_18 {
 
 	public static void main(String[] args) {
+		// ユーザ入力のため、Scannerクラスのオブジェクトを生成する
 		Scanner standardInput = new Scanner(System.in);
 
 		// ユーザへ入力を促すためのメッセージ
@@ -41,30 +42,21 @@ public class Ensyu7_18 {
 	 * targetIndex:削除するインデックス番号
 	 */
 	static void aryRmv(int[] intArray, int targetIndex) {
-		// 処理結果を入れる作業用配列を用意する
-		int[] tmpArray = new int[intArray.length];
 
-		// 配列の要素数分ループする
-		for(int count = 0; count < intArray.length; count++) {
-			// 指定された位置以降の場合
-			if(count >= targetIndex) {
-				// あまりの数値の場合
-				if(count >= intArray.length -1) {
-					// 元配列と同じ値を入れる
-					tmpArray[count] = intArray[count];
-				} else {
-					// 元の位置の隣の値を入れる
-					tmpArray[count] = intArray[count + 1];
-				}
-			// 指定位置より前の場合
+		// 指定位置から要素数分ループする
+		for(int count = targetIndex; count < intArray.length; count++) {
+			// あまりの数の場合
+			if(count >= intArray.length -1) {
+				// 置き換えないため、処理なし
+				continue;
 			} else {
-				// 元配列と同じ値を入れる
-				tmpArray[count] = intArray[count];
+				// 元の位置の隣の値を入れる
+				intArray[count] = intArray[count + 1];
 			}
 		}
 
 		// 配列の要素数分ループする
-		for(int intNumber : tmpArray) {
+		for(int intNumber : intArray) {
 			// 各要素の値を表示する
 			System.out.print(intNumber + " ");
 		}
