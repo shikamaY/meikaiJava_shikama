@@ -36,6 +36,7 @@ public class Ensyu7_19 {
 		// 検索キーとして扱うため、入力値を変数に代入
 		int removeCount = standardInput.nextInt();
 
+		// 入力値を元に指定された位置から指定個数分削除する
 		aryRmvN(intArray,targetIndex,removeCount);
 	}
 
