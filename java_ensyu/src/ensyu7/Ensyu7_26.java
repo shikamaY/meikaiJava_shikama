@@ -19,7 +19,6 @@ public class Ensyu7_26 {
 		System.out.print("追加するインデックス:");
 		// 入力値を代入する
 		int addIndex = standardInput.nextInt();
-		// 指定されたインデックスを削除した結果を表示する
 		// ユーザに何を入力するか表示する
 		System.out.print("追加する値:");
 		// 入力値を代入する
