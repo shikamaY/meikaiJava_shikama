@@ -63,7 +63,7 @@ public class Ensyu7_26 {
 		// ユーザへ入力を促すためのメッセージ
 		System.out.print("配列の要素数:");
 		// ユーザからの入力値を代入する
-		int arrayCount = standardInput.nextInt();
+		final int arrayCount = standardInput.nextInt();
 		// 指定された要素数の配列を用意する
 		int[] intArray = new int[arrayCount];
 
