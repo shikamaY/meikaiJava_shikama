@@ -74,11 +74,11 @@ public class Ensyu7_28 {
 		// ユーザへ入力を促すためのメッセージ
 		System.out.print("配列の要素数(１次):");
 		// ユーザからの入力値を代入する
-		int arrayCountFirst = standardInput.nextInt();
+		final int arrayCountFirst = standardInput.nextInt();
 		// ユーザへ入力を促すためのメッセージ
 		System.out.print("配列の要素数（２次）:");
 		// ユーザからの入力値を代入する
-		int arrayCountSecond = standardInput.nextInt();
+		final int arrayCountSecond = standardInput.nextInt();
 		// 指定された要素数の配列を用意する
 		int[][] intDoualArray = new int[arrayCountFirst][arrayCountSecond];
 
