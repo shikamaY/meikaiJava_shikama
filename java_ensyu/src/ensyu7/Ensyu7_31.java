@@ -9,11 +9,15 @@ public class Ensyu7_31 {
 	public static void main(String[] args) {
 		// int型の絶対値
 		System.out.println(absolute(100));
+		System.out.println(absolute(-100));
 		// long型の絶対値
+		System.out.println(absolute(1000000000000L));
 		System.out.println(absolute(-1000000000000L));
 		// float型の絶対値
 		System.out.println(absolute(10.0F));
+		System.out.println(absolute(-10.0F));
 		// double型の絶対値
+		System.out.println(absolute(1.01213113111318888131131D));
 		System.out.println(absolute(-1.01213113111318888131131D));
 
 	}
@@ -25,8 +29,8 @@ public class Ensyu7_31 {
 		// 絶対値を入れる変数を用意
 		int absoluteNumber = number;
 		// 何の型の処理か出力
-        System.out.println("int");
-        // 負の値か判定
+		System.out.println("int");
+		// 負の値か判定
 		if (absoluteNumber < 0) {
 			// 負の場合は整数に変換
 			absoluteNumber *= -1;
