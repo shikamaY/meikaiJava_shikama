@@ -56,10 +56,12 @@ public class Ensyu7_33 {
 		int digitsMax = 0;
 		// 行数分ループする
 		for (int rowCount = 0; rowCount < intArray.length; rowCount++) {
+				// 要素の桁数を一時的な変数に代入する
+				int digitsTmp = String.valueOf(intArray[rowCount][columnCount]).length();
 			    // 対象の要素の桁数が最大化判定する
-				if(digitsMax < String.valueOf(intArray[rowCount][columnCount]).length()) {
+				if(digitsMax < digitsTmp) {
 					// 桁数が最大の場合は代入する
-					digitsMax = String.valueOf(intArray[rowCount][columnCount]).length();
+					digitsMax = digitsTmp;
 			}
 		}
 		// 最大桁数を返却する
