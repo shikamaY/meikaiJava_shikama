@@ -8,19 +8,19 @@ public class Ensyu7_32 {
 	public static void main(String[] args) {
 
 		// byte型の変数を用意する
-		byte byteNumber = 10;
+		final byte byteNumber = 10;
 
 		printBits(byteNumber);
 		// short型の変数を用意する
-		short shortNumber = 3000;
+		final short shortNumber = 3000;
 		// 数値をビット表示する
 		printBits(shortNumber);
 		// int型の変数を用意する
-		int intNumber = 10000;
+		final int intNumber = 10000;
 		// 数値をビット表示する
 		printBits(intNumber);
 		// long型の変数を用意する
-		long longNumber = 1000000000000000L;
+		final long longNumber = 1000000000000000L;
 		// 数値をビット表示する
 		printBits(longNumber);
 	}
@@ -32,7 +32,7 @@ public class Ensyu7_32 {
 		// 何の型の処理か出
 		System.out.println("byte");
 		// 32桁分ループする
-		for (int count = 31; count >=0; count--) {
+		for (int count = 7; count >=0; count--) {
 			// 0か1を判定する
 			System.out.print(((number >>> count & 1) == 1) ? '1' : '0');
 		}
@@ -47,7 +47,7 @@ public class Ensyu7_32 {
 		// 何の型の処理か出
 		System.out.println("short");
 		// 32桁分ループする
-		for (int count = 31; count >=0; count--) {
+		for (int count = 15; count >=0; count--) {
 			// 0か1を判定する
 			System.out.print(((number >>> count & 1) == 1) ? '1' : '0');
 		}
@@ -77,7 +77,7 @@ public class Ensyu7_32 {
 		// 何の型の処理か出
 		System.out.println("long");
 		// 32桁分ループする
-		for (int count = 31; count >=0; count--) {
+		for (int count = 63; count >=0; count--) {
 			// 0か1を判定する
 			System.out.print(((number >>> count & 1) == 1) ? '1' : '0');
 		}
