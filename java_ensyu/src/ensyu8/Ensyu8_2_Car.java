@@ -97,15 +97,15 @@ public class Ensyu8_2_Car {
 			// 足りていない場合はfalseを返す
 			return false;
 		// 燃料が足りている場合
-		} else {
-			// 移動する分の燃料を減らす
-			fuel -= dist;
-			// 移動分加算する
-			positionX += moveX;
-			// 移動分加算する
-			positionY += moveY;
-			// trueを返す
-			return true;
 		}
+
+		// 移動する分の燃料を減らす
+		fuel -= dist;
+		// 移動分加算する
+		positionX += moveX;
+		// 移動分加算する
+		positionY += moveY;
+		// trueを返す
+		return true;
 	}
 }
