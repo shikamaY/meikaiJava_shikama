@@ -104,7 +104,7 @@ public class Ensyu9_5_Day {
 	// 年月日と曜日を文字で表示するメソッド
 	public String toString() {
 		// 曜日の文字列を生成
-		String[] wd = {"日","月","火","水","木","金","土"};
+		final String[] wd = {"日","月","火","水","木","金","土"};
 		// 年月日と算出した曜日のインデックス番号を返却する
 		return String.format("%04d年%02d月%02d日(%s)",year,month,date,wd[dayOfWeek()]);
 	}

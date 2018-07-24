@@ -28,12 +28,12 @@ public class Ensyu9_5_period {
 
 	// 開始日を再定義するメソッド
 	void newFrom(Ensyu9_5_Day from) {
-		this.from = new Ensyu9_5_Day(from);
+		this.from = from;
 	}
 
 	// 終了日を再定義するメソッド
 	void newTo(Ensyu9_5_Day to) {
-		this.to = new Ensyu9_5_Day(to);
+		this.to = to;
 	}
 
 	// 開始日と終了日を返すtoStringメソッド
