@@ -1,5 +1,9 @@
 package ensyu10;
 
+import static java.util.Calendar.*;
+
+import java.util.GregorianCalendar;
+
 public class Day {
 	// 年を入れる変数
 	private int year = 1;
@@ -16,12 +20,25 @@ public class Day {
 
 	// 引数がない場合のコンストラクタ
 	public Day() {
+		// GregorianCalendarのインスタンス生成
+		GregorianCalendar today = new GregorianCalendar();
+		// 現在の年を取得
+		this.year = today.get(YEAR);
+		// 現在の月を取得
+		this.month = today.get(MONTH) + 1;
+		// 現在の日を取得
+		this.date = today.get(DATE);
+
+		// 入力値チェック
+		checkDate();
 	}
 
 	// 引数が年の場合のコンストラクタ
 	public Day(int year) {
 		// 引数の値を代入
 		this.year = year;
+		// 入力値チェック
+		checkDate();
 	}
 
 	// 引数が2つの場合のコンストラクタ
@@ -30,6 +47,10 @@ public class Day {
 		this(year);
 		// monthを代入
 		this.month = month;
+
+		// 入力値チェック
+		checkDate();
+
 	}
 
 	// 引数が3つの場合のコンストラクタ
@@ -38,12 +59,19 @@ public class Day {
 		this(year,month);
 		// dateを代入
 		this.date = date;
+
+		// 入力値チェック
+		checkDate();
+
 	}
 
 	// 同じクラス型の引数を渡された場合
 	public Day(Day d) {
 		// 引数のそれぞれのクラス変数を代入する
 		this(d.year,d.month,d.date);
+
+		// 入力値チェック
+		checkDate();
 	}
 
 	// yearを参照するメソッド
@@ -116,6 +144,34 @@ public class Day {
 		return (clacYear + clacYear / 4 - clacYear / 100 + clacYear / 400 + (13 * clacMonth + 8) / 5 + date) % 7;
 	}
 
+	// 月の入力値チェック
+	public void checkDate() {
+		// GregorianCalendarのインスタンス生成
+		GregorianCalendar today = new GregorianCalendar();
+
+		// 1月より小さい場合
+		if (this.month < 1) {
+			// 1月に修正
+			this.month = 1;
+		// 12月より大きい場合
+		} else if (this.month > 12) {
+			// 12月に修正
+			this.month = 12;
+		}
+	    // 対象月の最大に日数を取得するため、月をセット
+		today.set(MONTH, this.month + 1);
+		// 最大日数を取得
+		int maxDays = today.getActualMaximum(DATE);
+    	// 1日より小さい場合
+		if (this.date < 1) {
+			// 1日に修正
+			this.date = 1;
+		// 月の最大日数より大きい場合
+		} else if (this.date > maxDays) {
+			// 最大日数に修正
+			this.date = maxDays;
+		}
+	}
 	// 年月日を比較して同じか判定するメソッド
 	public boolean equalTo(Day d) {
 		// それぞれの値を比較して、同じ場合はtrueを返す
