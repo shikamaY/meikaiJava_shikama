@@ -12,6 +12,8 @@ public class Day {
 	// 日を入れる変数
 	private int date = 1;
 
+	// インスタンス名
+	GregorianCalendar today;
 	// 閏年しか判定するクラスメソッド
 	public static boolean isLeap(int checkYear) {
 		// 判定結果を返す
@@ -21,57 +23,54 @@ public class Day {
 	// 引数がない場合のコンストラクタ
 	public Day() {
 		// GregorianCalendarのインスタンス生成
-		GregorianCalendar today = new GregorianCalendar();
+		today = new GregorianCalendar();
 		// 現在の年を取得
 		this.year = today.get(YEAR);
 		// 現在の月を取得
 		this.month = today.get(MONTH) + 1;
 		// 現在の日を取得
 		this.date = today.get(DATE);
-
-		// 入力値チェック
-		checkDate();
 	}
 
 	// 引数が年の場合のコンストラクタ
 	public Day(int year) {
+		// GregorianCalendarのインスタンス生成
+		today = new GregorianCalendar();
+		// 年をセットする
+		today.set(YEAR,year);
 		// 引数の値を代入
-		this.year = year;
-		// 入力値チェック
-		checkDate();
+		this.year = today.get(YEAR);
 	}
 
 	// 引数が2つの場合のコンストラクタ
 	public Day(int year, int month) {
 		// 引数が1つのコンストラクタを実行
 		this(year);
-		// monthを代入
-		this.month = month;
-
-		// 入力値チェック
-		checkDate();
-
+		if (month > 12) {
+			month = 12;
+		} else if (month < 1) {
+			month = 1;
+		}
+		// 月をセットする
+		today.set(MONTH,month - 1);
+		// 月を代入
+		this.month = today.get(MONTH) + 1;
 	}
 
 	// 引数が3つの場合のコンストラクタ
 	public Day(int year, int month, int date) {
 		// 引数が2つのコンストラクタを実行
 		this(year,month);
+		// 年をセットする
+		today.set(DATE,date);
 		// dateを代入
-		this.date = date;
-
-		// 入力値チェック
-		checkDate();
-
+		this.date = today.get(DATE);
 	}
 
 	// 同じクラス型の引数を渡された場合
 	public Day(Day d) {
 		// 引数のそれぞれのクラス変数を代入する
 		this(d.year,d.month,d.date);
-
-		// 入力値チェック
-		checkDate();
 	}
 
 	// yearを参照するメソッド
@@ -144,38 +143,10 @@ public class Day {
 		return (clacYear + clacYear / 4 - clacYear / 100 + clacYear / 400 + (13 * clacMonth + 8) / 5 + date) % 7;
 	}
 
-	// 月の入力値チェック
-	public void checkDate() {
-		// GregorianCalendarのインスタンス生成
-		GregorianCalendar today = new GregorianCalendar();
-
-		// 1月より小さい場合
-		if (this.month < 1) {
-			// 1月に修正
-			this.month = 1;
-		// 12月より大きい場合
-		} else if (this.month > 12) {
-			// 12月に修正
-			this.month = 12;
-		}
-	    // 対象月の最大に日数を取得するため、月をセット
-		today.set(MONTH, this.month + 1);
-		// 最大日数を取得
-		int maxDays = today.getActualMaximum(DATE);
-    	// 1日より小さい場合
-		if (this.date < 1) {
-			// 1日に修正
-			this.date = 1;
-		// 月の最大日数より大きい場合
-		} else if (this.date > maxDays) {
-			// 最大日数に修正
-			this.date = maxDays;
-		}
-	}
 	// 年月日を比較して同じか判定するメソッド
-	public boolean equalTo(Day d) {
+	public boolean equalTo(Day diffDate) {
 		// それぞれの値を比較して、同じ場合はtrueを返す
-		return year == d.year && month == d.month && date == d.date;
+		return year == diffDate.year && month == diffDate.month && date == diffDate.date;
 	}
 
 	// 年月日と曜日を文字で表示するメソッド
@@ -184,5 +155,138 @@ public class Day {
 		final String[] wd = {"日","月","火","水","木","金","土"};
 		// 年月日と算出した曜日のインデックス番号を返却する
 		return String.format("%04d年%02d月%02d日(%s)",year,month,date,wd[dayOfWeek()]);
+	}
+
+	// 年内の経過日数を取得する
+	public int getPassDays() {
+		// 作業用のインスタンスを生成
+		GregorianCalendar tmpDay = new GregorianCalendar();
+		// 経過日数
+		int passDays = 0;
+		// 経過した月の分ループする
+		for (int count = 1; count < this.month; count++ ) {
+			// 対象月の最大日数を取得するため、月をセット
+			tmpDay.set(MONTH, count);
+			// 最大日数を加算する
+			passDays += tmpDay.getActualMaximum(DATE);
+		}
+		// 当月の経過日数を加算する
+		passDays += this.date;
+		// 経過日数を返却する
+		return passDays;
+	}
+
+	// 年内の残り日数を取得する
+	public int getDaysLeft() {
+		final int MAXDAYS = 365;
+		// 経過日数から残り日数を求めて返却する
+		return MAXDAYS - this.getPassDays();
+	}
+	// 日付の前後関係を求めるメソッド
+	public void diffDate(Day diffDate){
+		if (this.equals(diffDate)) {
+			System.out.println("同じ日付");
+		} else if (this.year > diffDate.year || (this.year > diffDate.year && this.month > diffDate.month) || (this.year > diffDate.year && this.month > diffDate.month && this.date > diffDate.date)) {
+			System.out.println("対象より後の日付");
+		} else {
+			System.out.println("対象より前の日付");
+		}
+	}
+
+	// 一日進めるメソッド
+	public void addOneAfter() {
+		// 日にちを進める
+		today.add(DATE, 1);
+
+		// 年を修正
+		year=today.get(YEAR);
+		// 月を修正
+		month=today.get(MONTH) + 1;
+		// 日を修正
+		date=today.get(DATE);
+	}
+
+	// 一日後にするメソッド
+	public void addOneBefor() {
+		// 日にちを進める
+		today.add(DATE, -1);
+		// 年を修正
+		year=today.get(YEAR);
+		// 月を修正
+		month=today.get(MONTH) + 1;
+		// 日を修正
+		date=today.get(DATE);
+	}
+
+	// n日後にするメソッド
+	public void addAfter(int addDay) {
+
+		// 日にちを進める
+		today.add(DATE, addDay);
+		// 年を修正
+		year=today.get(YEAR);
+		// 月を修正
+		month=today.get(MONTH) + 1;
+		// 日を修正
+		date=today.get(DATE);
+	}
+
+	// n日前にするメソッド
+	public void addBefor(int addDay) {
+		// 日にちを進める
+		today.add(DATE, -addDay);
+		// 年を修正
+		year=today.get(YEAR);
+		// 月を修正
+		month=today.get(MONTH) + 1;
+		// 日を修正
+		date=today.get(DATE);
+	}
+
+	// 一日後の日付を取得するメソッド
+	public String getOneAfterDay() {
+		// 一日加算する
+		this.addOneAfter();
+		// 日付を取得する
+		String returnDate = toString();
+		// 日付を戻す
+		this.addOneBefor();
+		// 結果を返却する
+		return returnDate;
+	}
+
+	// 一日前の日付を取得するメソッド
+	public String getOneBeforDay() {
+		// 1日減算する
+		this.addOneBefor();
+		// 日付を取得する
+		String returnDate = toString();
+		// 日付を戻す
+		this.addOneAfter();
+		// 結果を返却する
+		return returnDate;
+	}
+
+	// 日付をn日進めた値を取得する
+	public String getAfterDay(int addDay) {
+		// 日付を加算する
+		this.addAfter(addDay);
+		// 日付を取得する
+		String returnDate = toString();
+		// 日付を戻す
+		this.addBefor(addDay);
+		// 結果を返却する
+		return returnDate;
+	}
+
+	// 日付をn日減らした値を取得する
+	public String getBeforDay(int addDay) {
+		// 日付を減算する
+		this.addBefor(addDay);
+		String returnDate = toString();
+		// 日付を戻す
+		this.addAfter(addDay);
+		// 結果を返却する
+		return returnDate;
 	}
 }

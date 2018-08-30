@@ -20,8 +20,51 @@ package ensyu10;
 public class Ensyu10_4 {
 
 	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
-		// 315ページに現在時間の取得方法がある
+
+		// 前後させる日数
+		final int BFTDAY = 5;
+		// 日付クラスのインスタンスを生成する
+		Day today = new Day();
+		// 生成したインスタンスの日付を取得する
+		System.out.println("実行日:" + today.toString());
+
+		// 誤った日付のインスタンスを生成する
+		Day anotherDay = new Day(1991,13,33);
+		// 日付が調整されているか確認する
+		System.out.println("比較する日付:" + anotherDay.toString());
+
+		// 日付の前後比較
+		today.diffDate(anotherDay);
+
+		// 日付を1日進める
+		today.addOneAfter();
+		// 日付を表示する
+		System.out.println("1日進めた日付:" +today.toString());
+
+		// 日付を1日戻す
+		today.addOneBefor();
+		// 日付を表示する
+		System.out.println("1日戻した日付:" + today.toString());
+
+		// 日付をn日進める
+		today.addAfter(BFTDAY);
+		// 日付を表示する
+		System.out.println(BFTDAY + "日進めた日付:" + today.toString());
+
+		// 日付をn日戻す
+		today.addBefor(BFTDAY);
+		// 日付を表示する
+		System.out.println(BFTDAY + "日戻した日付:" + today.toString());
+
+		// 1日後の日付を表示する
+		System.out.println("1日後の日付:" + today.getOneAfterDay());
+		// 1日前の日付を表示する
+		System.out.println("1日前の日付" + today.getOneBeforDay());
+		// n日後の日付
+		System.out.println(BFTDAY + "日後の日付" + today.getAfterDay(BFTDAY));
+		// n日前の日付
+		System.out.println(BFTDAY + "日前の日付" +today.getBeforDay(BFTDAY));
+
 	}
 
 }
