@@ -12,7 +12,7 @@ public class Day {
 	// 日を入れる変数
 	private int date = 1;
 
-	// インスタンス名
+	// クラス内で共通で使用するため、インスタンス名を設定
 	GregorianCalendar today;
 	// 閏年しか判定するクラスメソッド
 	public static boolean isLeap(int checkYear) {
@@ -46,9 +46,13 @@ public class Day {
 	public Day(int year, int month) {
 		// 引数が1つのコンストラクタを実行
 		this(year);
+		// 12月より大きい数字の場合
 		if (month > 12) {
+			// 12月をセット
 			month = 12;
+		// 1月より小さい数字の場合
 		} else if (month < 1) {
+			// 1月をセット
 			month = 1;
 		}
 		// 月をセットする
@@ -178,17 +182,23 @@ public class Day {
 
 	// 年内の残り日数を取得する
 	public int getDaysLeft() {
-		final int MAXDAYS = 365;
+		final int MAX_DAYS = 365;
 		// 経過日数から残り日数を求めて返却する
-		return MAXDAYS - this.getPassDays();
+		return MAX_DAYS - this.getPassDays();
 	}
 	// 日付の前後関係を求めるメソッド
 	public void diffDate(Day diffDate){
+		// 比較した日付が同じ場合
 		if (this.equals(diffDate)) {
+			// メッセージを表示する
 			System.out.println("同じ日付");
+		// 年、月、日をそれぞれ比較して日付が後か判定する
 		} else if (this.year > diffDate.year || (this.year > diffDate.year && this.month > diffDate.month) || (this.year > diffDate.year && this.month > diffDate.month && this.date > diffDate.date)) {
+			// メッセージを表示する
 			System.out.println("対象より後の日付");
+		// 比較対象より前の場合
 		} else {
+			// メッセージを表示する
 			System.out.println("対象より前の日付");
 		}
 	}

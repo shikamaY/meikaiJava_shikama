@@ -22,7 +22,7 @@ public class Ensyu10_4 {
 	public static void main(String[] args) {
 
 		// 前後させる日数
-		final int BFTDAY = 5;
+		final int MOVE_DAY = 5;
 		// 日付クラスのインスタンスを生成する
 		Day today = new Day();
 		// 生成したインスタンスの日付を取得する
@@ -47,23 +47,23 @@ public class Ensyu10_4 {
 		System.out.println("1日戻した日付:" + today.toString());
 
 		// 日付をn日進める
-		today.addAfter(BFTDAY);
+		today.addAfter(MOVE_DAY);
 		// 日付を表示する
-		System.out.println(BFTDAY + "日進めた日付:" + today.toString());
+		System.out.println(MOVE_DAY + "日進めた日付:" + today.toString());
 
 		// 日付をn日戻す
-		today.addBefor(BFTDAY);
+		today.addBefor(MOVE_DAY);
 		// 日付を表示する
-		System.out.println(BFTDAY + "日戻した日付:" + today.toString());
+		System.out.println(MOVE_DAY + "日戻した日付:" + today.toString());
 
 		// 1日後の日付を表示する
 		System.out.println("1日後の日付:" + today.getOneAfterDay());
 		// 1日前の日付を表示する
 		System.out.println("1日前の日付" + today.getOneBeforDay());
 		// n日後の日付
-		System.out.println(BFTDAY + "日後の日付" + today.getAfterDay(BFTDAY));
+		System.out.println(MOVE_DAY + "日後の日付" + today.getAfterDay(MOVE_DAY));
 		// n日前の日付
-		System.out.println(BFTDAY + "日前の日付" +today.getBeforDay(BFTDAY));
+		System.out.println(MOVE_DAY + "日前の日付" +today.getBeforDay(MOVE_DAY));
 
 	}
 
