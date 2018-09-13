@@ -178,9 +178,9 @@ public class Day {
 
 	// 年内の残り日数を取得する
 	public int getDaysLeft() {
-		final int MAXDAYS = 365;
+		final int YEAR_OF_DAYS = 365;
 		// 経過日数から残り日数を求めて返却する
-		return MAXDAYS - this.getPassDays();
+		return YEAR_OF_DAYS - this.getPassDays();
 	}
 	// 日付の前後関係を求めるメソッド
 	public void diffDate(Day diffDate){
