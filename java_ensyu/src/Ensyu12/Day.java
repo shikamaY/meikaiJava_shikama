@@ -3,11 +3,11 @@ package Ensyu12;
 public class Day {
 
 	// 年を入れる変数
-	private int year = 1;
+	private int mYear = 1;
 	// 月を入れる変数
-	private int month = 1;
+	private int mMonth = 1;
 	// 日を入れる変数
-	private int date = 1;
+	private int mDate = 1;
 
 	// 引数がない場合のコンストラクタ
 	public Day() {
@@ -16,7 +16,7 @@ public class Day {
 	// 引数が年の場合のコンストラクタ
 	public Day(int year) {
 		// 引数の値を代入
-		this.year = year;
+		this.mYear = year;
 	}
 
 	// 引数が2つの場合のコンストラクタ
@@ -24,7 +24,7 @@ public class Day {
 		// 引数が1つのコンストラクタを実行
 		this(year);
 		// monthを代入
-		this.month = month;
+		this.mMonth = month;
 	}
 
 	// 引数が3つの場合のコンストラクタ
@@ -32,57 +32,57 @@ public class Day {
 		// 引数が2つのコンストラクタを実行
 		this(year,month);
 		// dateを代入
-		this.date = date;
+		this.mDate = date;
 	}
 
 	// 同じクラス型の引数を渡された場合
 	Day(Day d) {
 		// 引数のそれぞれのクラス変数を代入する
-		this(d.year,d.month,d.date);
+		this(d.mYear,d.mMonth,d.mDate);
 	}
 
 	// yearを参照するメソッド
 	public int getYear() {
 		// yearを返却する
-		return year;
+		return mYear;
 	}
 
 	// monthを参照するメソッド
 	public int getMonth() {
 		// monthを返却する
-		return month;
+		return mMonth;
 	}
 
 	// dateを参照するメソッド
 	public int getDate() {
 		// dateを返却する
-		return date;
+		return mDate;
 	}
 
 	// yearを変更するメソッド
 	public void setYear(int year) {
 		// 引数を代入する
-		this.year = year;
+		this.mYear = year;
 	}
 
 	// monthを変更するメソッド
 	public void setMonth(int month) {
 		// 引数を代入する
-		this.month = month;
+		this.mMonth = month;
 	}
 
 	// dateを変更するメソッド
 	public void setDate(int date) {
 		// 引数を代入する
-		this.date = date;
+		this.mDate = date;
 	}
 
 	// 年月日から曜日を算出するメソッド
 	public int dayOfWeek() {
 		// 年を計算用の変数に代入
-		int clacYear = year;
+		int clacYear = mYear;
 		// 月を計算用の変数に代入
-		int clacMonth = month;
+		int clacMonth = mMonth;
 
 		// 1月または2月の場合
 		if (clacMonth == 1 || clacMonth == 2 ) {
@@ -92,13 +92,13 @@ public class Day {
 			clacMonth += 12;
 		}
 		// 計算結果を0～6で返却する（日～土）
-		return (clacYear + clacYear / 4 - clacYear / 100 + clacYear / 400 + (13 * clacMonth + 8) / 5 + date) % 7;
+		return (clacYear + clacYear / 4 - clacYear / 100 + clacYear / 400 + (13 * clacMonth + 8) / 5 + mDate) % 7;
 	}
 
 	// 年月日を比較して同じか判定するメソッド
 	public boolean equalTo(Day d) {
 		// それぞれの値を比較して、同じ場合はtrueを返す
-		return year == d.year && month == d.month && date == d.date;
+		return mYear == d.mYear && mMonth == d.mMonth && mDate == d.mDate;
 	}
 
 	// 年月日と曜日を文字で表示するメソッド
@@ -106,7 +106,7 @@ public class Day {
 		// 曜日の文字列を生成
 		final String[] wd = {"日","月","火","水","木","金","土"};
 		// 年月日と算出した曜日のインデックス番号を返却する
-		return String.format("%04d年%02d月%02d日(%s)",year,month,date,wd[dayOfWeek()]);
+		return String.format("%04d年%02d月%02d日(%s)",mYear,mMonth,mDate,wd[dayOfWeek()]);
 	}
 }
 
