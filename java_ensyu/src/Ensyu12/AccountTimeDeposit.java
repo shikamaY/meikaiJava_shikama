@@ -2,24 +2,24 @@ package Ensyu12;
 
 public class AccountTimeDeposit extends Account {
 	// 定期預金を入れる変数
-	private long timeDeposit;
+	private long mTimeDeposit;
 
 	// コンストラクタ
-	AccountTimeDeposit(String accountName, String accountNo, long balance, long timeDeposit, Day openingDate) {
+	AccountTimeDeposit(String accountName, String accountNo, long balance, long mTimeDeposit, Day openingDate) {
 		// 親クラスのコンストラクタを実行
 		super(accountName, accountNo, balance, openingDate);
-		this.timeDeposit = 0;
+		this.mTimeDeposit = 0;
 	}
 
 	// 預金残高を返すメソッド
 	long getTimeDeposit() {
-		return timeDeposit;
+		return mTimeDeposit;
 	}
 
 	// お金を預けるメソッド
 	void setTimeDeposit(long money) {
 		// 残高に加算する
-		timeDeposit += money;
+		mTimeDeposit += money;
 	}
 
 	// 普通預金と定期預金の残高を比較するメソッド
