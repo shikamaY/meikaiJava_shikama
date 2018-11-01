@@ -109,4 +109,3 @@ public class Day {
 		return String.format("%04d年%02d月%02d日(%s)",mYear,mMonth,mDate,wd[dayOfWeek()]);
 	}
 }
-
