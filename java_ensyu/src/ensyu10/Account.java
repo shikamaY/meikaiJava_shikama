@@ -60,7 +60,7 @@ public class Account {
 	// 口座開設日を返却するメソッド
 	Day getOpeningDate() {
 		// 口座開設日を返す
-		return new Day(openingDate);
+		return openingDate;
 	}
 
 	// 口座情報を返すtoStringメソッド
