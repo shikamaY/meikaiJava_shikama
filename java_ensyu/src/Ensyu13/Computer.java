@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Computer extends Player{
 	// じゃんけんの手の種類
-	final int INT_HAND_PATTERN = 3;
+	static final int INT_HAND_PATTERN = 3;
 
 	// コンストラクタ
 	Computer() {
