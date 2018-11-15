@@ -2,6 +2,10 @@ package Ensyu15;
 
 import java.util.Scanner;
 
+/* 文字列を読み込んで、その文字列を逆順に表示するプログラムを作成せよ
+ *
+ */
+
 public class Ensyu15_1 {
 	public static void main(String[] args) {
 		// Scannerクラスのオブジェクトを生成
