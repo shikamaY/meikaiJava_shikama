@@ -18,16 +18,24 @@ public class Ensyu15_3 {
 		System.out.print("文字列2:");
 		// 入力値を代入する
 		String stringIn2 = stdIn.next();
-
+		// 文字が含まれているか判定
 		int stringSerch = stringIn1.indexOf(stringIn2);
+		// 結果が-1の場合
 		if (stringSerch == -1) {
+			// メッセージを表示する
 			System.out.println("文字列１に文字列２は含まれていません");
+		// 含まれている場合
 		} else {
+			// スペース用の変数
 			String speace = "";
+			// 一致した位置分ループする
 			for(int count = 0; count < stringSerch; count++) {
+				// スペースを追加
 				speace+=" ";
 			}
+			// 結果の表示
 			System.out.println("文字列1:" + stringIn1);
+			// 結果の表示
 			System.out.println("文字列2:" + speace + stringIn2);
 		}
 	}
