@@ -13,6 +13,13 @@ import java.util.GregorianCalendar;
 public class Ensyu15_8 {
 
 	public static void main(String[] args) {
+
+		// デフォルトのループカウント
+		final int DEFAULT_LOOP_COUNT = 1;
+		// 1年分のループカウント
+		final int ONE_YEAR_LOOP_COUNT = 12;
+		// デフォルトの年または月の値
+		final int DEFAULT_NUMBER = 0;
 		// 対象年を入れる変数
 		int targetYear = 0;
 		// 対象月を入れる変数
@@ -20,14 +27,11 @@ public class Ensyu15_8 {
 
 		// 引数の数が1の場合
 		if (args.length == 1) {
-			// 引数が年の場合
-			if (args[0].matches("[0-9][0-9][0-9][0-9]")) {
-				// 年を変数に代入する
-				targetYear = new Integer(args[0]);
-				// 1年分のカレンダーの表示
-				printCalendar(targetYear,1,12);
+			// 年を変数に代入する
+			targetYear = new Integer(args[0]);
+			// 1年分のカレンダーの表示
+			printCalendar(targetYear,DEFAULT_NUMBER + 1,ONE_YEAR_LOOP_COUNT);
 			// 引数が月の場合
-			}
 		// 引数が二つの場合
 		} else if (args.length == 2) {
 			// 年を変数に代入する
@@ -35,10 +39,10 @@ public class Ensyu15_8 {
 			// 月を変数に代入する
 			targetMonth = new Integer(args[1]);
 			// 対象年月のカレンダーを表示
-			printCalendar(targetYear,targetMonth,1);
+			printCalendar(targetYear,targetMonth,DEFAULT_LOOP_COUNT);
 		} else {
 			// 実行した月のカレンダーを表示
-			printCalendar(0,0,1);
+			printCalendar(0,0,DEFAULT_LOOP_COUNT);
 		}
 	}
 
@@ -70,7 +74,7 @@ public class Ensyu15_8 {
 				// カレンダーのサイズ分ループする
 				for (int countColumn = 0; countColumn < calendar[countRow].length; countColumn++) {
 					// 対象日にちの曜日を計算する
-					int day= dayOfWeek(year,month + count,date);
+					int day= dayOfWeek(targetDate.get(YEAR),targetDate.get(MONTH) + count,date);
 					// 該当する位置に数値を代入する
 					calendar[countRow][day] = String.valueOf(date);
 					// 日にちを加算
